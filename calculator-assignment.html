@@ -3,46 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Closure</title>
+    <title>Calculator</title>
 </head>
 <body>
     <script>
         function calculator (operation,...values){
-            var result;
-            function addition(...valuesToAdd){
-                var addResult = 
-                document.write(`Addition: ${addResult}`);
+           var op = parseInt(prompt("Enter the choice you want to do 1.addition 2.subtraction 3.multiplication 4.division 5.cube 6.sine 7.cosine 8.log"));
+
+            function addition(a,b,c){
+                return a+b+c;
             }
-            function subtraction (...valuesToSub) {
-                var subResult = 
-                document.write(`Subtraction: ${subResult}`);
+            function subtraction (a,b) {
+                return a-b;
+              
             }
-            function multiplication (...valuesToMul) {
-                var mulResult = 
-                document.write(`Multiplication: ${mulResult}`);
+            function multiplication (a,b,c) {
+               return a*b*c;
+               
             }
-            function division (...valuesToDivide) {
-                var divResult = 
-                document.write(`Division: ${divResult}`);
+            function division (a,b) {
+               return a/b;
+               
             }
             function cube (a) {
-                var cubeResult = a * a * a;
-                document.write(`Cube: ${cubeResult}`);
+                return a * a * a;
+              
             }
             function sine (a) {
-                var sineResult = Math.sin(a);
-                document.write(`Sine: ${sineResult}`);
+                return Math.sin(a);
+              
             }
             function cosine (a){
-                var cosResult = Math.cos (a);
-                document.write(`cosine: ${cosResult}`);
+              return Math.cos (a);
+               
             }
             function log (a){
-                var logResult = Math.log (a);
-                document.write(`Log: ${logResult}`);
+               return Math.log (a);
+               
             }
+            var resultArray = [];
+            var resultAdd = addition(values[0], values[1],values[2]);
+            var resultSub = subtraction(values[0], values[1]);
+            var resultMul = multiplication(values[0], values[1],values[2]);
+            var resultDiv = division(values[0], values[1]);
+            var resultCube = cube(values[0]);
+            var resultSine = sine(values[0]);
+            var resultCos = cosine(values[0]);
+            var resultLog = log(values[0]);
+            resultArray.push (resultAdd);
+            resultArray.push (resultSub);
+            resultArray.push (resultMul);
+            resultArray.push (resultDiv);
+            resultArray.push (resultCube);
+            resultArray.push (resultSine);
+            resultArray.push (resultCos);
+            resultArray.push (resultLog);
+            return resultArray;
+            switch (op) {
+                case 1:
+                    addition();
+                    document.write(`Addition: ${totalResult[0]}`);
+                    break;
+                case 2:
+                    subtraction();
+                   document.write(`Subtraction: ${totalResult[1]}`);
+                    break;
+                case 3:
+                    multiplication();
+                    document.write(`Multiplication: ${totalResult[2]}`);
+                    break;
+                case 4:
+                    division();
+                    document.write(`Division: ${resultDiv}`);
+                    break;
+                case 5:
+                    cube();
+                    document.write(`Cube: ${resultCube}`);
+                    break;
+                case 6: 
+                    sine();
+                    document.write(`Sine: ${resultSine}`);
+                    break;
+                case 7:
+                    cosine();
+                    document.write(`Cosine: ${resultCos}`);
+                    break;
+                case 8:
+                    log();
+                    document.write(`Log: ${resultLog}`);
+                    break;
+                default : alert ("Wrong Input!!");
 
+            }
         }
+        var totalResult = calculator("multiply",3,6,9);
+        //document.write(`Addition: ${totalResult[0]}`);
+        //document.write(`Subtraction: ${totalResult[1]}`);
+
 
 
     </script>
