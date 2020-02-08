@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body>
+    <script>
+        function calculator (operation,...values){
+            var result;
+            function addition(...valuesToAdd){
+                var addResult = 
+                document.write(`Addition: ${addResult}`);
+            }
+            function subtraction (...valuesToSub) {
+                var subResult = 
+                document.write(`Subtraction: ${subResult}`);
+            }
+            function multiplication (...valuesToMul) {
+                var mulResult = 
+                document.write(`Multiplication: ${mulResult}`);
+            }
+            function division (...valuesToDivide) {
+                var divResult = 
+                document.write(`Division: ${divResult}`);
+            }
+            function cube (a) {
+                var cubeResult = a * a * a;
+                document.write(`Cube: ${cubeResult}`);
+            }
+            function sine (a) {
+                var sineResult = Math.sin(a);
+                document.write(`Sine: ${sineResult}`);
+            }
+            function cosine (a){
+                var cosResult = Math.cos (a);
+                document.write(`cosine: ${cosResult}`);
+            }
+            function log (a){
+                var logResult = Math.log (a);
+                document.write(`Log: ${logResult}`);
+            }
+
+        }
+
+
+    </script>
+</body>
+</html>

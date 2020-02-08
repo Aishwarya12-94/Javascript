@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Date </title>
+</head>
+<body>
+    <script>
+                    //Time in Japan
+
+    function calcTime (city,offset) {
+        var d = new Date(); // creating Date object for current location
+        var utc = d.getTime() + (d.getTimezoneOffset() *60000); //convert to msec, add local time zone offet and get UTC time in msec {1000 msec = 1 sec and 1 min= 60 sec ;ie sec to msec by 60*1000}
+        var nd = new Date (utc + (3600000 *offset)); //creating new Date object for different city using supplied offset{1000msec = 1sec and 1 hour = 3600sec ie., hours to msec =3600*1000 = 3600000}
+        return "The local time in " +city+ " is " +nd.toLocaleString(); //returning time as a string}
+    }
+    //get Japan time
+    document.write (calcTime ('Japan', '+9'));
+    document.write("<br>");
+    //get Bombay time
+    document.write (calcTime ('Bombay', '+5.5'));
+
+           
+            //LEAP yEAR
+   
+    function leapYear(year) {
+        return (year % 100 ===0) ? (year % 400 === 0) : (year % 4 === 0); //for leap year it shudnt be divisible by 100 but shud be divisible by 4 or 400
+    }
+    console.log (leapYear (2016));
+    console.log (leapYear(2020));
+    console.log(leapYear(1700));
+    console.log(leapYear(1900));
+    console.log(leapYear(2000));
+
+    </script>
+</body>
+</html>

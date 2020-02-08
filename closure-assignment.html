@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure!!! </title>
+</head>
+<body>
+    <script>
+        function getClosurePlotFunc (rectanglePlotWidth, rectanglePlotBreadth,squarePlotSide) {
+            var rectanglePlotArea = rectanglePlotWidth *rectanglePlotBreadth;
+            var squarePlotArea = squarePlotSide * squarePlotSide;
+            var totalPlotArea = function (rectanglePlotNo, squarePlotNo) {
+                var totalArea = (rectanglePlotNo *rectanglePlotArea) + (squarePlotNo* squarePlotArea);
+                document.write(`The rectangle plot area is: ${rectanglePlotArea} <br> square plot area is: ${squarePlotArea} <br> total plot area is: ${totalArea}`);
+            }
+            return totalPlotArea;
+        }
+        var rectanglePlotWidth = 100;
+        var rectanglePlotBreadth = 50;
+        var squarePlotSide = 50;
+        var getTotalAreaFunc = getClosurePlotFunc(rectanglePlotWidth, rectanglePlotBreadth,squarePlotSide);
+        getTotalAreaFunc(10, 20);
+
+    </script>
+</body>
+</html>
